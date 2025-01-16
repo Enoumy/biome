@@ -1,0 +1,91 @@
+---
+source: crates/biome_formatter_test/src/snapshot_builder.rs
+assertion_line: 212
+info: whitespace/strong_tags.html
+---
+# Input
+
+```html
+<div>
+	<h1>Whitespace test cases</h1>
+	<p>
+		These test cases showcase that the HTML in this file is formatted with the
+		following whitespace
+		<a
+			href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Whitespace"
+			>rules</a
+		>.
+	</p>
+
+	<div>
+		<div>a<strong>no spaces</strong>c</div>
+		<div>a <strong>yes spaces</strong> c</div>
+	</div>
+
+	<div>
+		<div>
+			a
+			<div>no spaces</div>
+			c
+		</div>
+		<div>
+			a
+			<div>yes spaces</div>
+			c
+		</div>
+	</div>
+</div>
+
+```
+
+
+=============================
+
+# Outputs
+
+## Output 1
+
+-----
+Indent style: Tab
+Indent width: 2
+Line ending: LF
+Line width: 80
+Attribute Position: Auto
+-----
+
+```html
+<div>
+	<h1>Whitespace test cases</h1>
+	<p>
+		These test cases showcase that the HTML in this file is formatted with the
+		following whitespace
+		<a
+			href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Whitespace"
+		>rules</a>
+		.
+	</p>
+
+	<div>
+		<div>
+			a<strong>no spaces</strong>c
+		</div>
+		<div>
+			a <strong>yes spaces</strong>c
+		</div>
+	</div>
+
+	<div>
+		<div>
+			a<div>no spaces</div>c
+		</div>
+		<div>
+			a<div>yes spaces</div>c
+		</div>
+	</div>
+</div>
+```
+
+# Lines exceeding max width of 80 characters
+```
+    7: 			href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Whitespace"
+```
