@@ -22,6 +22,8 @@ info: whitespace/strong_tags.html
 		<div>a <strong>yes spaces</strong> c</div>
 	</div>
 
+	<div attr=value another_attr></div>
+
 	<div>
 		<div>
 			a
@@ -73,6 +75,8 @@ Attribute Position: Auto
 			a <strong>yes spaces</strong>c
 		</div>
 	</div>
+
+	<div attr="value " another_attr></div>
 
 	<div>
 		<div>
